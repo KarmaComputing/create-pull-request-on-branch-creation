@@ -24,7 +24,9 @@ jobs:
           git commit --allow-empty -m "Empty commit to allow auto PR creation"
 
       - name: Push Empty Commit
-        run: git push origin main ${{ github.ref_name }}
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git push origin main ${{ github.ref_name }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
