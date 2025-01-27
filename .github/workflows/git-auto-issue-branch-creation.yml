@@ -56,8 +56,8 @@ jobs:
           git config --global user.email "username@users.noreply.github.com"
           git commit --allow-empty -m "Empty commit to allow auto PR creation"
           git fetch origin
-          git rebase --strategy-option=theirs origin/main # thanks https://joht.github.io/johtizen/build/2022/01/20/github-actions-push-into-repository.html
-          git push
+          git rebase --strategy-option=theirs origin/main --verbose # thanks https://joht.github.io/johtizen/build/2022/01/20/github-actions-push-into-repository.html
+          git push --verbose
   
       - name: Creating PR based on branch name ${{ github.ref_name }}
         run: |
