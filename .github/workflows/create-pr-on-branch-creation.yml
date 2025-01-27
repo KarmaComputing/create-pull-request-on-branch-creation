@@ -26,7 +26,7 @@ jobs:
       - name: Push Empty Commit
         run: |
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
-          git push origin main ${{ github.ref_name }}
+          git push origin ${{ github.ref }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
