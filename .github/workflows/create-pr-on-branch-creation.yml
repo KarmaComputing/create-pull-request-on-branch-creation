@@ -2,8 +2,8 @@ name: Create pr on branch creation
 
 # Controls when the workflow will run
 on:
-  create:
-  # Allows you to run this workflow manually from the Actions tab
+  create: # works for github ui branch creation
+  push: # works for new branches created via other actions
   workflow_dispatch:
 
 jobs:
