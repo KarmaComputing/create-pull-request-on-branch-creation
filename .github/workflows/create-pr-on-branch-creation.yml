@@ -25,7 +25,7 @@ jobs:
 
       - name: Push Empty Commit
         run: |
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/KarmaComputing/create-pull-request-on-branch-creation
           git push origin ${{ github.ref }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
