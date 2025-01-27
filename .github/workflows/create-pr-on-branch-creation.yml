@@ -18,7 +18,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create Empty Commit to allow empty pr
-        run: git commit --allow-empty -m "Empty commit to allow auto PR creation"
+        run: |
+          git config user.email "nobody@example.com"
+          git config user.name "nobody"
+          git commit --allow-empty -m "Empty commit to allow auto PR creation"
 
       - name: Push Empty Commit
         run: git push origin main ${{ github.ref_name }}
